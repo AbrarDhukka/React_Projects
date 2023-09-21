@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//using REACT Component
-
+//MOCK Swiggy API Data
 const resList = [
   {
     info: {
@@ -754,6 +753,7 @@ const resList = [
   },
 ];
 
+//Heading data
 const headData = [
   {
     imgUrl:
@@ -761,9 +761,8 @@ const headData = [
     links: ["Home", "About", "Contact Us", "Cart"],
   },
 ];
-console.log("printing...",headData.imgUrl)
 
-//console.log("Printing name of Restaurant",resList[0].info.name)
+//Heading Component
 const HeadingComp = (props) => {
   const { data } = props;
   const { imgUrl, links } = data[0];
@@ -776,7 +775,7 @@ const HeadingComp = (props) => {
         <h1 id="headtext">Swigmato</h1>
       </div>
       <div id="navlinks">
-        <ul>
+        <ul id="navlinks-text">
           {links.map((link) => {
             return (<li>{link}</li>);
           })}
@@ -786,6 +785,7 @@ const HeadingComp = (props) => {
   );
 };
 
+//Restaurant Card Components
 const CardComp = (props) => {
   const { resData } = props;
   const { name, avgRating, cuisines, costForTwo, cloudinaryImageId } =
@@ -801,14 +801,16 @@ const CardComp = (props) => {
           }
           alt="food image"
         ></img>
-        <h2>{name}</h2>
-        <h3>`{avgRating} Avg Ratings</h3>
-        <h3>{cuisines.join(", ")}</h3>
-        <h3>{costForTwo}</h3>
+        <h2 id="name-res">{name}</h2>
+        <h3 id="rating">{avgRating} Stars</h3>
+        <h3 id="cuis">{cuisines.join(", ")}</h3>
+        <h3 id="price">{costForTwo}</h3>
       </div>
     </div>
   );
 };
+
+//Body Component
 const BodyComp = () => {
   return (
     <div id="body">
@@ -819,7 +821,7 @@ const BodyComp = () => {
   );
 };
 
-const Body = () => {
+const App = () => {
   return (
     <div>
       <HeadingComp data={headData}></HeadingComp>
@@ -829,4 +831,4 @@ const Body = () => {
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Body></Body>);
+root.render(<App></App>);
