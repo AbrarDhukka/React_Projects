@@ -15,7 +15,11 @@ const CardComp = (props) => {
             alt="food image"
           ></img>
           <h2 id="name-res">{name}</h2>
-          <h3 id="rating">{avgRating} Stars</h3>
+          
+          <div id="rating-block">
+          <h3 id="rating">{avgRating}</h3>
+            <img id="rating-star" src="https://www.clipartmax.com/png/middle/307-3078264_star-rating-icon-rating-star-single-png.png"></img>
+          </div>
           <h3 id="cuis">{cuisines.join(", ")}</h3>
           <h3 id="price">{costForTwo}</h3>
         </div>

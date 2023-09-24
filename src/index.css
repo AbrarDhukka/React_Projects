@@ -120,5 +120,33 @@ font-size: medium;
     cursor: pointer;
     transform: scale(1.1);
     font-weight: bolder;
+}
+
+#rated-btn2{
+margin-right: 30px;
+padding: 10px;
+border-radius: 10px;
+background-color: rgb(221, 153, 104);
+font-size: large;
+font-weight: bolder;
+}
+
+
+#rated-btn2:hover{
+    cursor: pointer;
+    font-weight: bolder;
     }
+    
+
+#rating-block{
+    display: flex;
+    gap: 5px;
+    /* border: 2px solid black; */
+}
+
+#rating-block img{
+    height: 25px;
+    width: 40px;
+    margin-top: -15px;
+}
     
