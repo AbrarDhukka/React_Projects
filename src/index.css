@@ -47,7 +47,9 @@
     transition: transform 0.7s;
     background-color: white;
     border-radius: 20px;
-    height: 400px;
+    /* height: 400px; */
+    height: fit-content;
+    max-height: 500px;
     line-height: 20px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
@@ -149,4 +151,62 @@ font-weight: bolder;
     width: 40px;
     margin-top: -15px;
 }
-    
+
+#topSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+   
+#txtBtn{
+    margin-left: 5px;
+    padding: 7px;
+border-radius: 10px;
+background-color: burlywood;
+font-size: medium;
+}
+#txtBtn:hover{
+  cursor: pointer;
+  background-color: rgb(239, 221, 196);
+  font-weight: bolder;
+}
+
+#searchbar{
+    padding: 7px;
+    border-radius: 10px;
+}
+
+#card-cont-li{
+    text-decoration: none;
+    color: black;
+}
+
+
+#card-cont-li:visited {
+   color: black;
+   text-decoration: none;
+}
+
+#card-cont-li:hover {
+    color: black;
+    text-decoration: none;
+}
+
+#card-cont-li:active {
+    color: black;
+    text-decoration: none;
+}
+
+#cuis{
+  white-space: nowrap; 
+  width: 300px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+#cuis:hover {
+  overflow: visible;
+  white-space: wrap; 
+}

@@ -1,6 +1,7 @@
 import CardComp from "./CardComp";
-import { resList } from "../utilities/data";
+import { resList, restData } from "../utilities/data";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 //Body Component
 const BodyComp = (props) => {
@@ -10,6 +11,7 @@ const BodyComp = (props) => {
   const [clicked1, setClicked1] = useState(false);
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
+  const [inpText, setInputText] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -17,8 +19,19 @@ const BodyComp = (props) => {
 
   const fetchData = async () => {
     try {
-      setlistOfRest(resList);
-      setFileteredList(resList);
+      //const restdata= await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=19.0759837&lng=72.8776559")
+      //const json=await restdata.json()
+      //console.log("JSON PRINTING..........",json)
+      setlistOfRest(
+        restData[0]?.data?.success?.cards[3]?.gridWidget?.gridElements
+          ?.infoWithStyle?.restaurants
+      );
+      setFileteredList(
+        restData[0]?.data?.success?.cards[3]?.gridWidget.gridElements
+          ?.infoWithStyle?.restaurants
+      );
+      console.log(restData[0].data);
+      //console.log("JSON PRINTING..........",restData.data.success.cards[4].gridWidget.gridElements.infoWithStyle.restaurants)
     } catch (error) {
       console.error("An error occurred while fetching data:", error);
     }
@@ -62,6 +75,32 @@ const BodyComp = (props) => {
     setClicked2(false);
     setClicked3(!clicked3);
   };
+  
+
+  const searchHandler = () => {
+
+    if (inpText === '') {
+      setFileteredList(
+        restData[0]?.data?.success?.cards[3]?.gridWidget.gridElements
+          ?.infoWithStyle?.restaurants
+      );
+    } 
+    else {
+      setFileteredList(
+        listOfRest.filter((res) => {
+          return (res.info.name.toLowerCase().includes(inpText.toLowerCase()));
+          
+        })
+      );
+    }
+
+    
+  };
+  useEffect(() => {
+    searchHandler();
+  }, [inpText]);
+  
+
 
   const LightBtn = (props) => {
     return (
@@ -80,31 +119,56 @@ const BodyComp = (props) => {
 
   return (
     <div id="body">
-      <div id="rated-btn">
-        {clicked ? (
-          <DarkBtn text="All Rated" handler={allRatedHandler}></DarkBtn>
-        ) : (
-          <LightBtn text="All Rated" handler={allRatedHandler}></LightBtn>
-        )}
-        {clicked1 ? (
-          <DarkBtn text="4+ Rated" handler={topRatedHandler}></DarkBtn>
-        ) : (
-          <LightBtn text="4+ Rated" handler={topRatedHandler}></LightBtn>
-        )}
-        {clicked2 ? (
-          <DarkBtn text="3+ Rated" handler={mediumRatedHandler}></DarkBtn>
-        ) : (
-          <LightBtn text="3+ Rated" handler={mediumRatedHandler}></LightBtn>
-        )}
-        {clicked3 ? (
-          <DarkBtn text="2+ Rated" handler={lowRatedHandler}></DarkBtn>
-        ) : (
-          <LightBtn text="2+ Rated" handler={lowRatedHandler}></LightBtn>
-        )}
+      <div id="topSection">
+        <div id="rated-btn">
+          {clicked ? (
+            <DarkBtn text="All Rated" handler={allRatedHandler}></DarkBtn>
+          ) : (
+            <LightBtn text="All Rated" handler={allRatedHandler}></LightBtn>
+          )}
+          {clicked1 ? (
+            <DarkBtn text="4+ Rated" handler={topRatedHandler}></DarkBtn>
+          ) : (
+            <LightBtn text="4+ Rated" handler={topRatedHandler}></LightBtn>
+          )}
+          {clicked2 ? (
+            <DarkBtn text="3+ Rated" handler={mediumRatedHandler}></DarkBtn>
+          ) : (
+            <LightBtn text="3+ Rated" handler={mediumRatedHandler}></LightBtn>
+          )}
+          {clicked3 ? (
+            <DarkBtn text="2+ Rated" handler={lowRatedHandler}></DarkBtn>
+          ) : (
+            <LightBtn text="2+ Rated" handler={lowRatedHandler}></LightBtn>
+          )}
+        </div>
+
+        <div id="searchBtn">
+          <input
+            id="searchbar"
+            type="text"
+            value={inpText}
+            onChange={(e) => {
+              setInputText(e.target.value);
+            }}
+          ></input>
+          <button id="txtBtn" onClick={searchHandler}>
+            Search
+          </button>
+          {console.log("Input text ---", inpText)}
+        </div>
       </div>
+
       <div id="card-cont">
         {filteredList.map((restaurant) => (
-          <CardComp resData={restaurant} key={restaurant.info.id}></CardComp>
+          <Link
+            id="card-cont-li"
+            to={"/restaurant/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            {" "}
+            <CardComp resData={restaurant}></CardComp>{" "}
+          </Link>
         ))}
       </div>
     </div>

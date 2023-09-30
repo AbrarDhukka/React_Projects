@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 //Heading Component
 const HeadingComp = (props) => {
     const { data } = props;
-    const { imgUrl, links } = data[0];
+    const { imgUrl } = data[0];
     return (
       <div id="heading">
         <div>
@@ -12,9 +14,10 @@ const HeadingComp = (props) => {
         </div>
         <div id="navlinks">
           <ul id="navlinks-text">
-            {links.map((link) => {
-              return (<li>{link}</li>);
-            })}
+           <li><Link to="/">Home</Link></li>
+           <li><Link to="/about">About</Link></li>
+           <li><Link to="/contact">Contact Us</Link></li>
+           <li>Cart</li>
           </ul>
         </div>
       </div>
