@@ -2,22 +2,14 @@ import React, { useState } from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { menu1 } from "../utilities/data";
+import useRestaurantMenu from "../utilities/useRestaurantMenu";
 
 const MenuPage = () => {
-  const [resInfo, setResInfo] = useState(null);
+
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  },[]);
-
-  const fetchMenu = async () => {
-      const restdata = await fetch(
-        "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0759837&lng=72.8776559&restaurantId="+resId);
-      const json = await restdata.json();
-      console.log("JSON PRINTING..........", json);
-      setResInfo(json?.data);   
-  };
+  //custom hook
+  const resInfo=useRestaurantMenu(resId);
 
   if(resInfo === null) {
     return (<div>

@@ -210,3 +210,8 @@ font-size: medium;
   overflow: visible;
   white-space: wrap; 
 }
+
+#user{
+    border: 2px solid black;
+    width: auto;
+}
