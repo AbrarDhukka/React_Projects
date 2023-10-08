@@ -8,11 +8,12 @@ import About from "./components/About";
 import ErrorPage from "./components/ErrorPage";
 import Contact from "./components/Contact";
 import MenuPage from "./components/MenuPage";
-
+import SubHead from "./components/SubHead";
 const App = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <HeadingComp data={headData}></HeadingComp>
+      
       <Outlet></Outlet>
     </div>
   );

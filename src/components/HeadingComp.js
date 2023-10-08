@@ -1,27 +1,39 @@
 import { Link } from "react-router-dom";
-
+import logo from "./SM_Logo-removebg-preview.png";
 //Heading Component
 const HeadingComp = (props) => {
-    const { data } = props;
-    const { imgUrl } = data[0];
-    return (
-      <div id="heading">
+  const { data } = props;
+  // const { imgUrl } = data[0];
+  return (
+    <div className="bg-blue-200 flex justify-center flex-wrap shadow-lg">
+      <div className="w-[1300px] flex flex-wrap justify-between items-center">
+
         <div>
-          <img src={imgUrl} alt="logo"></img>
+          <Link to="/"><img className="w-[120px]" src={logo} alt="Logo"></img></Link>
         </div>
+
         <div>
-          <h1 id="headtext">Swigmato</h1>
+          <span className="font-bold text-5xl text-blue-950">Swigmato</span>
         </div>
-        <div id="navlinks">
-          <ul id="navlinks-text">
-           <li><Link to="/">Home</Link></li>
-           <li><Link to="/about">About</Link></li>
-           <li><Link to="/contact">Contact Us</Link></li>
-           <li>Cart</li>
+
+        <div>
+          <ul className="flex flex-row flex-wrap">
+            <li className="my-5 text-lg hover:text-blue-700">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="m-5 text-lg hover:text-blue-700">
+              <Link to="/about">About</Link>
+            </li>
+            <li className="m-5 text-lg hover:text-blue-700">
+              <Link to="/contact">Contact Us</Link>
+            </li>
+            <li className="my-5 text-lg hover:text-blue-700 cursor-pointer">Cart</li>
           </ul>
         </div>
-      </div>
-    );
-  };
 
-  export default HeadingComp
+      </div>
+    </div>
+  );
+};
+
+export default HeadingComp;
