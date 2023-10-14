@@ -13,21 +13,21 @@ const HeadingComp = (props) => {
         </div>
 
         <div>
-          <span className="font-bold text-5xl text-blue-950">Swigmato</span>
+          <span className="font-bold text-5xl text-blue-950 ml-[140px]">Swigmato</span>
         </div>
 
         <div>
           <ul className="flex flex-row flex-wrap">
-            <li className="my-5 text-lg hover:text-blue-700">
+            <li className="m-3 text-lg hover:text-blue-700">
               <Link to="/">Home</Link>
             </li>
-            <li className="m-5 text-lg hover:text-blue-700">
+            <li className="m-3 text-lg hover:text-blue-700">
               <Link to="/about">About</Link>
             </li>
-            <li className="m-5 text-lg hover:text-blue-700">
+            <li className="m-3 text-lg hover:text-blue-700">
               <Link to="/contact">Contact Us</Link>
             </li>
-            <li className="my-5 text-lg hover:text-blue-700 cursor-pointer">Cart</li>
+            <li className="m-3 text-lg hover:text-blue-700 cursor-pointer">Cart</li>
           </ul>
         </div>
 
