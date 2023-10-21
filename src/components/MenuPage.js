@@ -68,7 +68,7 @@ const MenuPage = () => {
                 key={cat?.card?.card.title}
                 clicked={index===showIndex ?true:false}
                 setShowIndex={()=>setShowIndex(index)}
-                index={index}
+                index={index }
               ></MenuCategories>
             ))}
           </ul>
