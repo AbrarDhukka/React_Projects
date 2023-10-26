@@ -41,7 +41,7 @@ let loc = useLocation()
             
             <button onClick={() => addHandler(cat)} className="absolute ml-8 shadow-lg -mt-4 px-2 py-1 rounded-lg bg-sky-700 text-[16px] text-white m-6 hover:scale-105 transition duration-600 ease-out-in">
         Add +
-      </button>:<div></div>
+      </button><div></div>
       
           </div>
      
