@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../utilities/Redux/cartSlice.js";
 
 const CartPage = ({ catdata }) => {
   //catdata.card.info
- const handler=()=>{
-  <Link to='/orderConfirmation'></Link>
+  const dispatch=useDispatch()
+
+ const handler=(cat)=>{
+  dispatch(clearCart(cat));
  }
   let totalPrice = 0;
   // Calculate the total price
@@ -62,7 +66,7 @@ const CartPage = ({ catdata }) => {
         
       </div>
 
-      <div className="md:w-1/4 w-[300px]">
+      <div className="md:w-1/4 w-[300px] mt-4">
                 <div className="bg-white rounded-lg shadow-md p-6 text-blue-950">
                     <h2 className="text-lg font-semibold mb-4">Summary</h2>
                     <div className="flex justify-between mb-2">
@@ -77,12 +81,16 @@ const CartPage = ({ catdata }) => {
                         <span>Shipping</span>
                         <span>0.00₹</span>
                     </div>
+                    <div className="flex justify-between mb-2">
+                        <span>Payment mode</span>
+                        <span>COD</span>
+                    </div>
                     <hr className="my-2"/>
                     <div className="flex justify-between mb-2">
                         <span className="font-semibold">Total</span>
                         <span className="font-semibold">{totalPrice}.00 ₹</span>
                     </div>
-                   <button className="bg-sky-700 text-white py-2 px-4 rounded-lg mt-4 w-full" onClick={handler}>Checkout</button>
+                  <Link to="/orderConfirmation"> <button className="bg-sky-700 hover:bg-sky-600 text-white py-2 px-4 rounded-lg mt-4 w-full" onClick={()=>handler(catdata)}>Place Order</button></Link>
                 </div>
      </div>
     </div>

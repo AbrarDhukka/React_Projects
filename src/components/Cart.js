@@ -1,12 +1,10 @@
-import React, { useContext } from 'react'
-import { useSelector } from 'react-redux'
-import SubCategory from './SubCategory'
-import CartPage from './CartPage'
-import { useDispatch } from 'react-redux'
-import { clearCart } from "../utilities/Redux/cartSlice.js"
-import { Link } from 'react-router-dom'
-
-//import cartImg from "./shopping-cart-removebg-preview.png"
+import React, { useContext } from "react";
+import { useSelector } from 'react-redux';
+import SubCategory from './SubCategory';
+import CartPage from './CartPage';
+import { useDispatch } from "react-redux";
+import { clearCart } from "../utilities/Redux/cartSlice.js";
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
@@ -28,8 +26,8 @@ const Cart = () => {
 
     {cartitems.length==0 ? <div></div>:
     <div className=''>
-    <button onClick={()=>clearHandler(cartitems)} className='text-sm p-2 rounded-xl bg-gray-200 text-sky-700 m-6 hover:scale-105 transition duration-600 ease-out-in'>Clear Cart</button>
-    <button className='text-sm p-2 rounded-xl bg-sky-700 text-white m-6 -mr-1 hover:scale-105 transition duration-600 ease-out-in'>Checkout</button>
+    <button onClick={()=>clearHandler(cartitems)} className='text-sm p-2 mb-2 rounded-xl bg-gray-200 text-sky-700 hover:scale-105 transition duration-600 ease-out-in'>Clear Cart</button>
+    <button className='text-sm p-2 rounded-xl bg-sky-700 text-white ml-6 mb-2 hover:scale-105 transition duration-600 ease-out-in'>Checkout</button>
     
     </div>}
 
