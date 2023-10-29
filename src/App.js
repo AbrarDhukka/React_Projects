@@ -13,17 +13,18 @@ import { userContext } from "./utilities/userContext";
 import { Provider } from "react-redux";
 import { appStore } from "./utilities/Redux/appStore";
 import Cart from "./components/Cart";
+import { Footer } from "./components/Footer";
+import OrderSuccess from "./components/OrderSuccess";
+
 const App = () => {
   const [user, setUser]=useState("Abrar")
   return (
     <Provider store={appStore}>
     <userContext.Provider value={[user, setUser]}>
-    <div className="overflow-hidden">
-    
-    
+    <div className="overflow-hidden">  
       <HeadingComp data={headData}></HeadingComp>
-      
       <Outlet></Outlet> 
+      <Footer></Footer>
     </div>
     </userContext.Provider>
     </Provider>
@@ -54,6 +55,10 @@ const appRouter=createBrowserRouter([
         {
           path:"/cart",
           element:<Cart></Cart>
+        },
+        {
+          path:"/orderConfirmation",
+          element:<OrderSuccess></OrderSuccess>
         }
       ],
       errorElement:<ErrorPage></ErrorPage>

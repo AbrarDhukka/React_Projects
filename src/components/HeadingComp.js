@@ -14,7 +14,7 @@ const HeadingComp = (props) => {
 
   const cart=useSelector((store) => store.cart.items)
   return (
-    <div className="bg-blue-200 flex justify-center flex-wrap shadow-lg">
+    <div className="bg-blue-200 flex justify-center flex-wrap shadow-lg fixed top-0 w-full z-50">
       <div className="w-[1300px] flex flex-wrap justify-between items-center">
 
         <div>
@@ -31,16 +31,16 @@ const HeadingComp = (props) => {
               <Link to="/">UserName : {user}</Link>
             </li> */}
             <li className="m-3 text-lg hover:text-blue-700">
-              <Link to="/">Home</Link>
+              <Link to="/">🏠 Home</Link>
             </li>
             <li className="m-3 text-lg hover:text-blue-700">
-              <Link to="/about">About</Link>
+              <Link to="/about">ℹ️ About</Link>
             </li>
             <li className="m-3 text-lg hover:text-blue-700">
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/contact">☏ Contact Us</Link>
             </li>
             <li className="m-3 text-lg hover:text-blue-700 cursor-pointer">
-              <Link to="/cart">Cart -{cart.length}</Link>
+              <Link to="/cart">🛒 Cart -{cart.length}</Link>
             </li>
           </ul>
         </div>

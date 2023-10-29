@@ -3,6 +3,9 @@ import { resList, restData } from "../utilities/data";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SubHead from "./SubHead";
+import SubFooter from "./SubFooter";
+
+
 //Body Component
 const BodyComp = (props) => {
   const [listOfRest, setlistOfRest] = useState([]);
@@ -118,9 +121,9 @@ const BodyComp = (props) => {
 
   return (
     <div className="flex justify-center bg-blue-100">
-      <div className="w-[1300px] flex flex-col justify-around items-center">
+      <div className="w-[1300px] flex flex-col justify-around items-center mt-[75px]">
         <SubHead></SubHead>
-
+        
         <div >
           <div className="flex justify-around items-center">
             <div id="rated-btn">
@@ -167,7 +170,10 @@ const BodyComp = (props) => {
 
           <div className="flex flex-wrap justify-center items-center rounded-md mt-1">
             {filteredList.length === 0 ? (
-              <h2>No Item found</h2>
+              <div className="h-[500px] text-2xl flex flex-col justify-center items-center">
+              <h2 className="m-5 -mt-20">No Item found</h2>
+              <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/no-item-found-4372002-3633300.png?f=webp"></img>
+              </div>
             ) : (
               filteredList.map((restaurant) => (
                 <Link
@@ -191,7 +197,11 @@ const BodyComp = (props) => {
             )}
           </div>
         </div>
-      </div>
+
+        
+        <SubFooter></SubFooter>
+      </div>     
+     
     </div>
   );
 };

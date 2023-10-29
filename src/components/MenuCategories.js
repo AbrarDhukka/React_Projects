@@ -11,7 +11,7 @@ const MenuCategories = ({ data, clicked, setShowIndex, index }) => {
         <div
           className="flex justify-between hover:cursor-pointer"
           onClick={() => {
-            setShowIndex()
+            setShowIndex(index)
           }}
         >
           <span className="font-bold text-lg">
