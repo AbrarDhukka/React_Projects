@@ -4,7 +4,7 @@
     "description": "Learning react",
     "scripts": {
       "start": "parcel ./src/index.html",
-      "build": "parcel build index.html",
+      "build": "parcel build ./src/index.html",
       "test": "jest"
     },
     "author": "Abrar Dhukka",
