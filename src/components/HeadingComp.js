@@ -39,8 +39,13 @@ const HeadingComp = (props) => {
             <li className="m-3 text-lg hover:text-blue-700">
               <Link to="/contact">☏ Contact Us</Link>
             </li>
-            <li className="m-3 text-lg hover:text-blue-700 cursor-pointer">
-              <Link to="/cart">🛒 Cart -{cart.length}</Link>
+            <li className="m-3 text-lg hover:text-blue-700 cursor-pointer flex ">
+            <div className="flex justify-center items-center ">
+              <Link to="/cart">🛒 Cart  </Link>
+              <span className="bg-sky-700 text-xs ml-2 w-5 h-5 flex 
+                    justify-center items-center animate-bounce rounded-full text-white" 
+                    >{cart.length}</span>
+                    </div>
             </li>
           </ul>
         </div>
