@@ -101,7 +101,7 @@ const BodyComp = (props) => {
   const LightBtn = (props) => {
     return (
       <button
-        className="px-2 py-1 rounded-xl bg-sky-700 text-[16px] text-white m-6 hover:scale-105 transition duration-600 ease-out-in"
+        className=" px-2 py-1 rounded-xl bg-sky-700 text-[16px] text-white m-6 hover:scale-105 transition duration-600 ease-out-in"
         onClick={props.handler}
       >
         {props.text}
@@ -118,10 +118,10 @@ const BodyComp = (props) => {
       </button>
     );
   };
-
+  
   return (
     <div className="flex justify-center bg-blue-100">
-      <div className="w-[1300px] flex flex-col justify-around items-center mt-[75px]">
+      <div className="w-[300px] border flex flex-col justify-around items-center mt-[75px] xl:w-[1300px] lg:w-[900px] md:w-[800px] sm:w-[400px]">
         <SubHead></SubHead>
         
         <div >
@@ -151,7 +151,7 @@ const BodyComp = (props) => {
                 <LightBtn text="2+ Rated" handler={lowRatedHandler}></LightBtn>
               )}
             </div>
-
+  
             <div>
               <input
                 className="focus:border-sky-500 bg-slate-100 border border-sky-400"
@@ -167,8 +167,8 @@ const BodyComp = (props) => {
               {console.log("Input text ---", inpText)}
             </div>
           </div>
-
-          <div className="flex flex-wrap justify-center items-center rounded-md mt-1">
+  
+          <div className="flex flex-wrap justify-center items-center rounded-md mt-1 ">
             {filteredList.length === 0 ? (
               <div className="h-[500px] text-2xl flex flex-col justify-center items-center">
               <h2 className="m-5 -mt-20">No Item found</h2>
@@ -180,6 +180,7 @@ const BodyComp = (props) => {
                   id="card-cont-li"
                   to={"/restaurant/" + restaurant.info.id}
                   key={restaurant.info.id}
+                  
                 >
                   {restaurant.info.promoted ? (
                     <div className="hover:scale-90 transition duration-700 ease-in-out">
@@ -197,13 +198,20 @@ const BodyComp = (props) => {
             )}
           </div>
         </div>
-
+  
         
         <SubFooter></SubFooter>
       </div>     
      
     </div>
   );
+  
+  
+  
+  
+ 
 };
 
 export default BodyComp;
+
+
