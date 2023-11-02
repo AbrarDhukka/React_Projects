@@ -1,15 +1,15 @@
 import React from 'react'
 import logo from "./SM_Logo-removebg-preview.png"
 
-export const Footer = () => {
+const Footer = () => {
   return (
-    <div className='w-[1530px] bg-sky-700 flex justify-center items-center'>
+    <div className='w-[1700px] bg-sky-700 flex justify-center items-center'>
 
     <footer
-      className="bg-sky-700 text-center text-white dark:bg-neutral-600 dark:text-neutral-200 lg:text-left w-[1300px] ">
+      className="bg-sky-700 text-center flex flex-col justify-center items-center text-white dark:bg-neutral-600 dark:text-neutral-200 lg:text-left w-[1300px] ">
       <div
-        className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
-        <div className="mr-12 hidden lg:block">
+        className=" w-[1535px] flex items-center justify-around border-b-2 border-neutral-200 p-6 dark:border-neutral-500">
+        <div className="mr-[570px] hidden lg:block">
           <span>Get connected with us on social networks:</span>
         </div>
         {/* <!-- Social network icons container --> */}
@@ -222,4 +222,5 @@ export const Footer = () => {
     </div>
   )
 }
+export default Footer
 

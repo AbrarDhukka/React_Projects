@@ -20,7 +20,7 @@ const HeadingComp = (props) => {
   const cart=useSelector((store) => store.cart.items)
   return (
     <div className="bg-blue-200 h-[75px] flex justify-center flex-wrap shadow-lg fixed top-0 w-full z-50">
-      <div className=" w-[450px] sm:w-[1300px] md:w-[1300px] xl:w-[1300px] flex flex-wrap justify-between items-center">
+      <div className=" w-[450px] sm:w-[1300px] md:w-[1700px] xl:w-[1300px] flex flex-wrap justify-between items-center">
 
         <div>
           <Link to="/"><img className="w-[70px] sm:w-[90px]" src={logo} alt="Logo"></img></Link>

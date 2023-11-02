@@ -13,7 +13,7 @@ import { userContext } from "./utilities/userContext";
 import { Provider } from "react-redux";
 import { appStore } from "./utilities/Redux/appStore";
 import Cart from "./components/Cart";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
 import OrderSuccess from "./components/OrderSuccess";
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
   return (
     <Provider store={appStore}>
     <userContext.Provider value={[user, setUser]}>
-    <div className="overflow-hidden">  
+    <div className="overflow-hidden flex flex-col items-center justify-center">  
       <HeadingComp data={headData}></HeadingComp>
       <Outlet></Outlet> 
       <Footer></Footer>

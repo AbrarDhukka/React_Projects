@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SubHead from "./SubHead";
 import SubFooter from "./SubFooter";
+import  Footer  from "./Footer";
 
 
 //Body Component
@@ -120,11 +121,11 @@ const BodyComp = (props) => {
   };
   
   return (
-    <div className="flex justify-center bg-blue-100">
-      <div className="w-[300px] border flex flex-col justify-around items-center mt-[75px] xl:w-[1300px] lg:w-[900px] md:w-[800px] sm:w-[400px]">
+    <div className="flex justify-center bg-blue-100 w-[1700px]">
+      <div className="w-[300px] flex flex-col justify-around items-center mt-[75px] 2xl:w-[1300px] xl:w-[1300px] lg:w-[900px] md:w-[800px] sm:w-[400px]">
         <SubHead></SubHead>
         
-        <div >
+        <div>
           <div className="flex justify-around items-center">
             <div id="rated-btn">
               {clicked ? (
@@ -200,7 +201,7 @@ const BodyComp = (props) => {
         </div>
   
         
-        <SubFooter></SubFooter>
+        <SubFooter></SubFooter>  
       </div>     
      
     </div>
