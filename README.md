@@ -24,7 +24,7 @@
  - Throughout this project, I focused exclusively on front-end development, sharpening my skills in React.js and enhancing my understanding of building robust and engaging user interfaces.
 
 
-###Homepage
+### Homepage
 ![Alt text](src/utilities/Screenshots/HomePage.png)
 ![Alt text](src/utilities/Screenshots/FooterPage.png)
 ![Alt text](src/utilities/Screenshots/AboutUs.png)
