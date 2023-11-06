@@ -22,3 +22,14 @@
 
  - I used API mock data from Swiggy in project.
  - Throughout this project, I focused exclusively on front-end development, sharpening my skills in React.js and enhancing my understanding of building robust and engaging user interfaces.
+
+
+![Alt text](HomePage.png)
+![Alt text](FooterPage.png)
+![Alt text](AboutUs.png)
+![Alt text](ContactUs.png)
+![Alt text](MenuPage.png)
+![Alt text](MenuPage01.png)
+![Alt text](CartPage.png)
+![Alt text](ClearCart.png)
+![Alt text](OrderConf.png)
