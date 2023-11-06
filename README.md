@@ -26,11 +26,27 @@
 
 ### Homepage
 ![Alt text](src/utilities/Screenshots/HomePage.png)
+
+### Footer
 ![Alt text](src/utilities/Screenshots/FooterPage.png)
+
+### AboutUsPage
 ![Alt text](src/utilities/Screenshots/AboutUs.png)
+
+### ContactUsPage
 ![Alt text](src/utilities/Screenshots/ContactUs.png)
+
+### MenuPage
 ![Alt text](src/utilities/Screenshots/MenuPage.png)
+
+### MenuPage
 ![Alt text](src/utilities/Screenshots/MenuPage01.png)
+
+### CartPage
 ![Alt text](src/utilities/Screenshots/CartPage.png)
+
+### EmptyCartPage
 ![Alt text](src/utilities/Screenshots/ClearCart.png)
+
+### OrderConfirmationPage
 ![Alt text](src/utilities/Screenshots/OrderConf.png)
